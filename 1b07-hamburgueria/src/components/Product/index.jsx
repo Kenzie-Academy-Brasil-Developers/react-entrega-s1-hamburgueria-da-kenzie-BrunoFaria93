@@ -5,10 +5,13 @@ const Product = ({filteredProducts}) =>{
     const [listaCarrinho, setListaCarrinho] = useState([])
 
     function atualizaCarrinho(currentSale){
-        if(listaCarrinho.length < 6){
-            setListaCarrinho([...listaCarrinho, currentSale])
+        if(listaCarrinho.includes(currentSale)){
+            console.log('ja tem')
+        }else{
+            if(listaCarrinho.length < 6){
+                setListaCarrinho([...listaCarrinho, currentSale])
+            }
         }
-        
     }
 
 
